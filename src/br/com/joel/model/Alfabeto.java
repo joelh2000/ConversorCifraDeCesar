@@ -18,4 +18,22 @@ public class Alfabeto {
     public ArrayList<Letra> getAlfabeto() {
         return alfabeto;
     }
+    
+    public char procurarLetraPeloNumero(int numero) {
+        for(Letra i : alfabeto){
+            if(i.getNumeroLetra() == numero) {
+                return i.getNomeLetra();
+            }
+        }
+        return 0;
+    }
+    
+    public int procurarNumeroPelaLetra(char letra) {
+        for(Letra i : alfabeto){
+            if(String.valueOf(i.getNomeLetra()).equalsIgnoreCase(String.valueOf(letra))) {
+                return i.getNumeroLetra();
+            }
+        }
+        return 0;
+    }
 }

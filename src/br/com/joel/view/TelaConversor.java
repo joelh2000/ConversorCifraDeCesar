@@ -6,12 +6,16 @@
 
 package br.com.joel.view;
 
+import br.com.joel.controlller.ControllerPrincipal;
+
 /**
  *
  * @author Joel
  */
 public class TelaConversor extends javax.swing.JFrame {
 
+    private ControllerPrincipal controllerPrincipal = new ControllerPrincipal();
+    
     /** Creates new form TelaConversor */
     public TelaConversor() {
         initComponents();
@@ -53,8 +57,18 @@ public class TelaConversor extends javax.swing.JFrame {
         lblChave.setText("Chave:");
 
         btnDecifrar.setText("Decifrar");
+        btnDecifrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDecifrarMouseClicked(evt);
+            }
+        });
 
         btnCifrar.setText("Cifrar");
+        btnCifrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCifrarMouseClicked(evt);
+            }
+        });
 
         lblTexto.setText("Texto:");
 
@@ -119,6 +133,14 @@ public class TelaConversor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCifrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCifrarMouseClicked
+        this.txtTextoCifrado.setText( this.txtTextoNormal.getText() + "a" );
+    }//GEN-LAST:event_btnCifrarMouseClicked
+
+    private void btnDecifrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDecifrarMouseClicked
+        this.txtTextoNormal.setText( this.txtTextoCifrado.getText() + "b" );
+    }//GEN-LAST:event_btnDecifrarMouseClicked
 
     /**
      * @param args the command line arguments

@@ -137,11 +137,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Decifrar"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnDecifrarMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnCifrar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cifrar"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCifrarMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblTexto">
           <Properties>
