@@ -38,25 +38,31 @@ public class TelaConversor extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         txtTextoCifrado = new javax.swing.JTextArea();
         lblChave = new javax.swing.JLabel();
-        txtChave = new javax.swing.JTextField();
         btnDecifrar = new javax.swing.JButton();
         btnCifrar = new javax.swing.JButton();
         lblTexto = new javax.swing.JLabel();
         lblTextoCifrado = new javax.swing.JLabel();
+        txtChave = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         pnlPrincipal.setBackground(new java.awt.Color(234, 234, 234));
+        pnlPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtTextoNormal.setColumns(20);
         txtTextoNormal.setRows(5);
         jScrollPane1.setViewportView(txtTextoNormal);
 
+        pnlPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 599, 169));
+
         txtTextoCifrado.setColumns(20);
         txtTextoCifrado.setRows(5);
         jScrollPane2.setViewportView(txtTextoCifrado);
 
+        pnlPrincipal.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 244, 599, 169));
+
         lblChave.setText("Chave:");
+        pnlPrincipal.add(lblChave, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 431, 41, 29));
 
         btnDecifrar.setText("Decifrar");
         btnDecifrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -64,6 +70,7 @@ public class TelaConversor extends javax.swing.JFrame {
                 btnDecifrarMouseClicked(evt);
             }
         });
+        pnlPrincipal.add(btnDecifrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(473, 431, -1, 29));
 
         btnCifrar.setText("Cifrar");
         btnCifrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -71,54 +78,16 @@ public class TelaConversor extends javax.swing.JFrame {
                 btnCifrarMouseClicked(evt);
             }
         });
+        pnlPrincipal.add(btnCifrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 431, -1, 29));
 
         lblTexto.setText("Texto:");
+        pnlPrincipal.add(lblTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 23));
 
         lblTextoCifrado.setText("Texto Cifrado:");
+        pnlPrincipal.add(lblTextoCifrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 215, -1, 23));
 
-        javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
-        pnlPrincipal.setLayout(pnlPrincipalLayout);
-        pnlPrincipalLayout.setHorizontalGroup(
-            pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
-                    .addGroup(pnlPrincipalLayout.createSequentialGroup()
-                        .addComponent(lblChave, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtChave, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDecifrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCifrar))
-                    .addGroup(pnlPrincipalLayout.createSequentialGroup()
-                        .addGroup(pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTexto)
-                            .addComponent(lblTextoCifrado))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        pnlPrincipalLayout.setVerticalGroup(
-            pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblTextoCifrado, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblChave, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtChave, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDecifrar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCifrar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
+        txtChave.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26" }));
+        pnlPrincipal.add(txtChave, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 50, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,9 +97,7 @@ public class TelaConversor extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
         );
 
         pack();
@@ -140,12 +107,12 @@ public class TelaConversor extends javax.swing.JFrame {
 
         try {
 
-            if (Integer.parseInt(this.txtChave.getText()) < 1 || Integer.parseInt(this.txtChave.getText()) > 26) {
+            if (Integer.parseInt(this.txtChave.getItemAt(this.txtChave.getSelectedIndex())) < 1 || Integer.parseInt(this.txtChave.getItemAt(this.txtChave.getSelectedIndex())) > 26) {
                 throw new NumberFormatException();
             }else if(this.txtTextoNormal.getText().equals("")) {
                 JOptionPane.showMessageDialog(null,"Digite o texto no campo texto normal para cifrar");
             }else{
-                String textoCifrado = controllerPrincipal.funcaoCifra(this.txtTextoNormal.getText(), Integer.parseInt(this.txtChave.getText()));
+                String textoCifrado = controllerPrincipal.funcaoCifra(this.txtTextoNormal.getText(), Integer.parseInt(this.txtChave.getItemAt(this.txtChave.getSelectedIndex())));
                 this.txtTextoCifrado.setText(textoCifrado);
                 this.txtTextoNormal.setText( "" );
             }
@@ -160,12 +127,12 @@ public class TelaConversor extends javax.swing.JFrame {
 
         try {
 
-            if (Integer.parseInt(this.txtChave.getText()) < 1 || Integer.parseInt(this.txtChave.getText()) > 26) {
+            if (Integer.parseInt(this.txtChave.getItemAt(this.txtChave.getSelectedIndex())) < 1 || Integer.parseInt(this.txtChave.getItemAt(this.txtChave.getSelectedIndex())) > 26) {
                 throw new NumberFormatException();
             }else if(this.txtTextoCifrado.getText().equals("")) {
                 JOptionPane.showMessageDialog(null,"Digite o texto no campo texto cifrado para decifrar");
             }else{
-                String textoNormal = controllerPrincipal.funcaoDecifra(this.txtTextoCifrado.getText(), Integer.parseInt(this.txtChave.getText()));
+                String textoNormal = controllerPrincipal.funcaoDecifra(this.txtTextoCifrado.getText(), Integer.parseInt(this.txtChave.getItemAt(this.txtChave.getSelectedIndex())));
                 this.txtTextoNormal.setText( textoNormal );
                 this.txtTextoCifrado.setText("");
             }
@@ -220,7 +187,7 @@ public class TelaConversor extends javax.swing.JFrame {
     private javax.swing.JLabel lblTexto;
     private javax.swing.JLabel lblTextoCifrado;
     private javax.swing.JPanel pnlPrincipal;
-    private javax.swing.JTextField txtChave;
+    private javax.swing.JComboBox<String> txtChave;
     private javax.swing.JTextArea txtTextoCifrado;
     private javax.swing.JTextArea txtTextoNormal;
     // End of variables declaration//GEN-END:variables
