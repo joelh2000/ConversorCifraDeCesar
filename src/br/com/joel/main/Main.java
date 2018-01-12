@@ -1,3 +1,10 @@
+/**Classe main que vai chamar o controller main
+ *
+ * @author Joel Henrique Silva Santos
+ * 
+ * @version 1.0
+ * 
+ */
 
 package br.com.joel.main;
 

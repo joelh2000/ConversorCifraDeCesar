@@ -1,3 +1,10 @@
+/**Classe que vai ter uma letra e essa letra vai ter um numero unico de 1 à 26
+ *
+ * @author Joel Henrique Silva Santos
+ * 
+ * @version 1.0
+ * 
+ */
 
 package br.com.joel.model;
 

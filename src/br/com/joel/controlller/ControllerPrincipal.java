@@ -1,7 +1,13 @@
+/**Controller principal que vai ser responsável pela view TelaConversor
+ *
+ * @author Joel Henrique Silva Santos
+ * 
+ * @version 1.0
+ * 
+ */
 
 package br.com.joel.controlller;
 
-import br.com.joel.model.Alfabeto;
 import br.com.joel.model.Cifra;
 
 public class ControllerPrincipal {

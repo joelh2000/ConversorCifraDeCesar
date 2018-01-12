@@ -1,3 +1,10 @@
+/**Classe onde vai ter todas as letras que o alfabeto tem e cada um tem um número.
+ *
+ * @author Joel Henrique Silva Santos
+ * 
+ * @version 1.0
+ * 
+ */
 
 package br.com.joel.model;
 
@@ -7,6 +14,7 @@ public class Alfabeto {
 
     private final ArrayList<Letra> alfabeto = new ArrayList<>();
 
+    // Adicionando a cada letra um numero (1~26)
     public Alfabeto() {
         char letrasAlfabeto[] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
         

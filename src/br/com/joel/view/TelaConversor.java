@@ -1,8 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**Controller principal que vai ser responsável por iniciar o programa
+ *
+ * @author Joel Henrique Silva Santos
+ * 
+ * @version 1.0
+ * 
  */
+
 package br.com.joel.view;
 
 import br.com.joel.controlller.ControllerPrincipal;
@@ -109,12 +112,12 @@ public class TelaConversor extends javax.swing.JFrame {
 
             if (Integer.parseInt(this.txtChave.getItemAt(this.txtChave.getSelectedIndex())) < 1 || Integer.parseInt(this.txtChave.getItemAt(this.txtChave.getSelectedIndex())) > 26) {
                 throw new NumberFormatException();
-            }else if(this.txtTextoNormal.getText().equals("")) {
-                JOptionPane.showMessageDialog(null,"Digite o texto no campo texto normal para cifrar");
-            }else{
+            } else if (this.txtTextoNormal.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Digite o texto no campo texto normal para cifrar");
+            } else {
                 String textoCifrado = controllerPrincipal.funcaoCifra(this.txtTextoNormal.getText(), Integer.parseInt(this.txtChave.getItemAt(this.txtChave.getSelectedIndex())));
                 this.txtTextoCifrado.setText(textoCifrado);
-                this.txtTextoNormal.setText( "" );
+                this.txtTextoNormal.setText("");
             }
 
         } catch (NumberFormatException ex) {
@@ -129,11 +132,11 @@ public class TelaConversor extends javax.swing.JFrame {
 
             if (Integer.parseInt(this.txtChave.getItemAt(this.txtChave.getSelectedIndex())) < 1 || Integer.parseInt(this.txtChave.getItemAt(this.txtChave.getSelectedIndex())) > 26) {
                 throw new NumberFormatException();
-            }else if(this.txtTextoCifrado.getText().equals("")) {
-                JOptionPane.showMessageDialog(null,"Digite o texto no campo texto cifrado para decifrar");
-            }else{
+            } else if (this.txtTextoCifrado.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Digite o texto no campo texto cifrado para decifrar");
+            } else {
                 String textoNormal = controllerPrincipal.funcaoDecifra(this.txtTextoCifrado.getText(), Integer.parseInt(this.txtChave.getItemAt(this.txtChave.getSelectedIndex())));
-                this.txtTextoNormal.setText( textoNormal );
+                this.txtTextoNormal.setText(textoNormal);
                 this.txtTextoCifrado.setText("");
             }
 
