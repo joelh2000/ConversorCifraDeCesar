@@ -11,7 +11,7 @@ public class ControllerPrincipal {
     }
     
     public String funcaoDecifra(String textoCifrado, int chave) {
-         return new Cifra().cifrarTexto(textoCifrado, chave);
+         return new Cifra().decifrarTexto(textoCifrado, chave);
     }
     
 }

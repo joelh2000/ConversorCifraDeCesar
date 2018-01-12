@@ -161,7 +161,7 @@ public class TelaConversor extends javax.swing.JFrame {
             }
 
             String textoNormal = controllerPrincipal.funcaoDecifra(this.txtTextoCifrado.getText(), Integer.parseInt(this.txtChave.getText()));
-            this.txtTextoNormal.setText("pato " + textoNormal);
+            this.txtTextoNormal.setText( textoNormal );
 
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Digite um numero valido para chave entre 1 até 26");
