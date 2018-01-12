@@ -142,10 +142,14 @@ public class TelaConversor extends javax.swing.JFrame {
 
             if (Integer.parseInt(this.txtChave.getText()) < 1 || Integer.parseInt(this.txtChave.getText()) > 26) {
                 throw new NumberFormatException();
+            }else if(this.txtTextoNormal.getText().equals("")) {
+                JOptionPane.showMessageDialog(null,"Digite o texto no campo texto normal para cifrar");
+            }else{
+                String textoCifrado = controllerPrincipal.funcaoCifra(this.txtTextoNormal.getText(), Integer.parseInt(this.txtChave.getText()));
+                this.txtTextoCifrado.setText(textoCifrado);
+                this.txtTextoNormal.setText( "" );
             }
 
-            String textoCifrado = controllerPrincipal.funcaoCifra(this.txtTextoNormal.getText(), Integer.parseInt(this.txtChave.getText()));
-            this.txtTextoCifrado.setText(textoCifrado);
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Digite um numero valido para chave entre 1 até 26");
         }
@@ -158,10 +162,13 @@ public class TelaConversor extends javax.swing.JFrame {
 
             if (Integer.parseInt(this.txtChave.getText()) < 1 || Integer.parseInt(this.txtChave.getText()) > 26) {
                 throw new NumberFormatException();
+            }else if(this.txtTextoCifrado.getText().equals("")) {
+                JOptionPane.showMessageDialog(null,"Digite o texto no campo texto cifrado para decifrar");
+            }else{
+                String textoNormal = controllerPrincipal.funcaoDecifra(this.txtTextoCifrado.getText(), Integer.parseInt(this.txtChave.getText()));
+                this.txtTextoNormal.setText( textoNormal );
+                this.txtTextoCifrado.setText("");
             }
-
-            String textoNormal = controllerPrincipal.funcaoDecifra(this.txtTextoCifrado.getText(), Integer.parseInt(this.txtChave.getText()));
-            this.txtTextoNormal.setText( textoNormal );
 
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Digite um numero valido para chave entre 1 até 26");
