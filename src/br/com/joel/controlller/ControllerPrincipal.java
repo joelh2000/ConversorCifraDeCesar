@@ -10,8 +10,8 @@ public class ControllerPrincipal {
         return new Cifra().cifrarTexto(textoNormal, chave);
     }
     
-   // public String funcaoDecifra(String textoCifrado, int chave) {
-    //     return new Cifra().cifrarTexto(textoCifrado, chave);
-    //}
+    public String funcaoDecifra(String textoCifrado, int chave) {
+         return new Cifra().cifrarTexto(textoCifrado, chave);
+    }
     
 }
