@@ -10,11 +10,13 @@ public class Cifra {
         String textoCifrado = "";
         
         for(int i=0; i<textoNormal.length(); i++) {
-            if(textoNormal.equals(" ")) {
-                System.out.println("ISSO É ESPACO");
+            if(String.valueOf(textoNormal.charAt(i)).equals(" ")) {
+                textoCifrado += " ";
+            }else{
+                int numeroCifrado = alfabeto.procurarNumeroPelaLetra(textoNormal.charAt(i)) + chave;
+                textoCifrado += ""+ alfabeto.procurarLetraPeloNumero(numeroCifrado);
             }
-            int numeroCifrado = alfabeto.procurarNumeroPelaLetra(textoNormal.charAt(i)) + chave;
-            textoCifrado += ""+ alfabeto.procurarLetraPeloNumero(numeroCifrado);
+
         }
         
         return textoCifrado;
@@ -25,11 +27,13 @@ public class Cifra {
         String textoNormal = "";
         
         for(int i=0; i<textoCifrado.length(); i++) {
-            if(textoNormal.equals(" ")) {
-                System.out.println("ISSO É ESPACO");
+            if(String.valueOf(textoCifrado.charAt(i)).equals(" ")) {
+                textoNormal += " ";
+            }else{
+                int numeroCifrado = alfabeto.procurarNumeroPelaLetra(textoCifrado.charAt(i)) - chave;
+                textoNormal += ""+ alfabeto.procurarLetraPeloNumero(numeroCifrado);
             }
-            int numeroCifrado = alfabeto.procurarNumeroPelaLetra(textoCifrado.charAt(i)) - chave;
-            textoNormal += ""+ alfabeto.procurarLetraPeloNumero(numeroCifrado);
+
         }
         
         return textoNormal;
