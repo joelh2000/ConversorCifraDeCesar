@@ -135,11 +135,13 @@ public class TelaConversor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCifrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCifrarMouseClicked
-        this.txtTextoCifrado.setText( this.txtTextoNormal.getText() + "a" );
+        String textoCifrado = controllerPrincipal.funcaoCifra(this.txtTextoNormal.getText(), Integer.parseInt(this.txtChave.getText()));
+        this.txtTextoCifrado.setText( textoCifrado );
     }//GEN-LAST:event_btnCifrarMouseClicked
 
     private void btnDecifrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDecifrarMouseClicked
-        this.txtTextoNormal.setText( this.txtTextoCifrado.getText() + "b" );
+       // String textoNormal = controllerPrincipal.funcaoDecifra(this.txtTextoCifrado.getText(), Integer.parseInt(this.txtChave.getText()));
+       // this.txtTextoNormal.setText( "pato " + textoNormal );
     }//GEN-LAST:event_btnDecifrarMouseClicked
 
     /**
